@@ -33,17 +33,11 @@ It supports breaking news, recommendations, search with filters, dark mode, and 
   lib/
   
 │── models/            # Data models (NewsModel)
-
 │── pages/             # Screens (News, Search, Settings, Detail)
-
 │── providers/         # State management (NewsProvider, ThemeProvider)
-
 │── services/          # API service layer
-
 │── utils/             # Constants, enums, extensions
-
 │── widgets/           # Reusable widgets (NewsTile, BottomNavigation)
-
 │── main.dart          # Entry point
 
 
