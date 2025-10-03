@@ -48,6 +48,8 @@ It supports breaking news, recommendations, search with filters, dark mode, and 
 
 
 
+
+
 To Clone the repository
 
   git clone https://github.com/mrtanonur/newshive.git
