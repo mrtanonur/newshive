@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newshive/providers/news_provider.dart';
 import 'package:newshive/utils/constants/constants.dart';
-import 'package:newshive/utils/constants/padding_constants.dart';
 import 'package:newshive/widgets/news_tile.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +12,7 @@ class AllNewsPage extends StatefulWidget {
 }
 
 class _AllNewsPageState extends State<AllNewsPage> {
+  @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<NewsProvider>().getNews();
@@ -23,7 +23,9 @@ class _AllNewsPageState extends State<AllNewsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("All News")),
+      appBar: AppBar(
+        title: const Text("All News"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(PaddingConstants.p12),
         child: Column(

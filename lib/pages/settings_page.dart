@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newshive/main.dart';
 import 'package:newshive/providers/theme_provider.dart';
 import 'package:newshive/utils/constants/constants.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +22,11 @@ class _SettingsPageState extends State<SettingsPage> {
       body: Container(
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.circular(12)),
-        margin: const EdgeInsets.only(left: 25, top: 10, right: 25),
+            borderRadius: BorderRadius.circular(SizesConstants.s12)),
+        margin: const EdgeInsets.only(
+            left: PaddingConstants.p24,
+            top: PaddingConstants.p10,
+            right: PaddingConstants.p24),
         padding: const EdgeInsets.all(PaddingConstants.p16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

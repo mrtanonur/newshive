@@ -15,8 +15,8 @@ class NewsTile extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(SizesConstants.s12),
             child: Image.network(
-              alignment: Alignment.center,
               newsModel.urlToImage,
+              alignment: Alignment.center,
               fit: BoxFit.cover,
               loadingBuilder: (context, child, loadingProgress) {
                 return loadingProgress == null
@@ -39,7 +39,7 @@ class NewsTile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Tech",
                 style: TextStyle(color: ColorConstants.grey500),
               ),
@@ -59,7 +59,7 @@ class NewsTile extends StatelessWidget {
                           style: TextStyle(color: Colors.grey[600]))),
                   Text(
                     newsModel.publishedAt.substring(0, 10),
-                    style: TextStyle(color: ColorConstants.grey500),
+                    style: const TextStyle(color: ColorConstants.grey500),
                   )
                 ],
               )

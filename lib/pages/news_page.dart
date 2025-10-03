@@ -19,7 +19,7 @@ class _NewsPageState extends State<NewsPage> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<NewsProvider>().getNews();
+      context.read<NewsProvider>().getNews(); // run this after the first build
     });
     super.initState();
   }
@@ -51,7 +51,7 @@ Widget header(BuildContext context, String header) {
         header,
         style: const TextStyle(
           fontWeight: FontWeight.w700,
-          fontSize: 28,
+          fontSize: SizesConstants.s28,
         ),
       ),
       TextButton(
@@ -101,7 +101,7 @@ Widget carousel(NewsModel newsModel) {
   return Container(
     width: double.infinity,
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(SizesConstants.s10),
       image: DecorationImage(
         colorFilter: const ColorFilter.mode(
           ColorConstants.grey500,
@@ -152,7 +152,7 @@ Widget recommendation(BuildContext context) {
           child: ListView.separated(
             itemCount: provider.news.length,
             separatorBuilder: (context, index) {
-              return const SizedBox(height: 10);
+              return const SizedBox(height: SizesConstants.s10);
             },
             itemBuilder: (context, index) {
               return GestureDetector(

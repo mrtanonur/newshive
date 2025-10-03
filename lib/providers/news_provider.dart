@@ -28,23 +28,26 @@ class NewsProvider extends ChangeNotifier {
         news = response;
         notifyListeners();
         return news;
-      } else
+      } else {
         state = NewsState.error;
+      }
       notifyListeners();
       return null;
     }
+    return null;
   }
 
   void reset() {
     searchText = "";
-    
+
     notifyListeners();
   }
 
   void filterNews(String value) {
     searchText = value;
     filteredNews = news
-        .where((news) => news.title.toLowerCase().contains(value.toLowerCase()))
+        .where((news) =>
+            news.title.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
     notifyListeners();
   }

@@ -36,7 +36,7 @@ class NewsDetailPage extends StatelessWidget {
             const SizedBox(
               height: SizesConstants.s20,
             ),
-            card(news),
+            card(context, news),
           ],
         ),
       ),
@@ -74,7 +74,7 @@ class NewsDetailPage extends StatelessWidget {
 
   Widget header(NewsModel news) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: PaddingConstants.p24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -82,10 +82,11 @@ class NewsDetailPage extends StatelessWidget {
             padding: const EdgeInsets.all(PaddingConstants.p8),
             decoration: BoxDecoration(
                 color: ColorConstants.accent,
-                borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(SizesConstants.s16)),
             child: const Text(
               "Tech",
-              style: TextStyle(color: ColorConstants.white, fontSize: 16),
+              style: TextStyle(
+                  color: ColorConstants.white, fontSize: SizesConstants.s16),
             ),
           ),
           const SizedBox(height: SizesConstants.s12),
@@ -108,30 +109,33 @@ class NewsDetailPage extends StatelessWidget {
     );
   }
 
-  Widget card(NewsModel news) {
+  Widget card(BuildContext context, NewsModel news) {
     return Expanded(
       flex: 3,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(PaddingConstants.p16),
-        decoration: const BoxDecoration(
-            color: ColorConstants.white,
-            borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface,
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(SizesConstants.s12),
                 topRight: Radius.circular(SizesConstants.s12))),
         child: ListView(
           children: [
             Text(
               news.author,
-              style: const TextStyle(
-                  fontSize: SizesConstants.s24, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: SizesConstants.s24,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(
               height: SizesConstants.s16,
             ),
             Text(news.content,
                 textAlign: TextAlign.justify,
-                style: const TextStyle(
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: SizesConstants.s16,
                   fontWeight: FontWeight.w500,
                 )),

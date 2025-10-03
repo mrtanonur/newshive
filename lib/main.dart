@@ -25,7 +25,7 @@ class MyWidget extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: context.watch<ThemeProvider>().themeMode,
-      home: MainPage(),
+      home: const MainPage(),
     );
   }
 }

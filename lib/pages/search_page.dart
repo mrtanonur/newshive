@@ -14,7 +14,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  @override
   FilterItems selectedItem = FilterItems.all;
   TextEditingController controller = TextEditingController();
 
@@ -38,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
                   hintText: "Search",
                   border: OutlineInputBorder(
                       borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(24)),
+                      borderRadius: BorderRadius.circular(SizesConstants.s24)),
                   prefixIconColor: ColorConstants.grey500,
                   suffixIconColor: ColorConstants.grey500,
                   prefixIcon: const Icon(Icons.search),
@@ -56,10 +55,12 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: PaddingConstants.p16),
               child: SizedBox(
                 height: SizesConstants.s40,
                 child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
                   itemCount: FilterItems.values.length,
                   separatorBuilder: (context, index) {
                     return const SizedBox(
@@ -92,7 +93,6 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                     );
                   },
-                  scrollDirection: Axis.horizontal,
                 ),
               ),
             ),
@@ -109,7 +109,7 @@ class _SearchPageState extends State<SearchPage> {
                     child: ListView.separated(
                       itemCount: news.length, //provider.news.length
                       separatorBuilder: (context, index) {
-                        return const SizedBox(height: 10);
+                        return const SizedBox(height: SizesConstants.s10);
                       },
                       itemBuilder: (context, index) {
                         return NewsTile(
